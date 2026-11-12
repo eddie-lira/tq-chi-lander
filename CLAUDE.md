@@ -55,11 +55,11 @@ any conflict.**
   - Greeting ("¡Hola, Chicago!"): italic, weight 700, 28px mobile / 36px
     desktop, white (it sits over the photo hero)
   - Intro/subheading copy: 20px mobile / 24px desktop, weight 500
-  - CTA subtext (under each button): 14.4px (0.9rem), `--gray`, sentence
-    case — **not** uppercase/eyebrow-style. An all-caps eyebrow treatment
-    was tried above the buttons and dropped for feeling "shouty"; this
-    sentence-case blurb-below-the-button pattern is the current standard
-    for any button annotation.
+  - CTA subtext (second line *inside* each button, `.btn-tq__sub`):
+    13.6px (0.85rem), weight 400, sentence case, no trailing period —
+    **not** uppercase/eyebrow-style. An all-caps eyebrow above the buttons
+    was dropped for feeling "shouty", and a gray blurb *below* each button
+    was replaced 2026-11-11 by this in-button second line.
 
 ### Color
 
@@ -138,11 +138,15 @@ Rules:
   white fill, 1px `rgba(47,64,82,.18)` border, a visible drop shadow (`0
   4px 10px rgba(47,64,82,.16)`) so they read as raised cards against the
   white page background, 48px minimum tap height. No trailing-arrow
-  convention — icon is always leading.
+  convention — icon is always leading, at ~2x label size (2.3rem,
+  `.btn-tq__icon`), next to a left-aligned label + subtext block. Every
+  button uses the same grid (3.25rem icon column + text column capped at
+  30rem, centered as a pair) so icon centers and text starts line up
+  vertically across all buttons — keep that when adding a button.
 - Button label text is always `--madison`; see the Color section above for
   the icon-accent-color convention.
-- CTA subtext sits *below* its button (`.tq-note`, see Typography), not
-  above it as an eyebrow.
+- CTA subtext is color `--madison` at 75% opacity (≈ #636f7d, ~5:1 on
+  white, passes AA) — darker than `--gray`, which fails AA on white.
 - Hover: darken one step (e.g. flamingo → rust) or a light fill tint, 200ms
   ease. No movement on hover; tap targets shouldn't jump.
 - Animations: fade/slide in only, respect `prefers-reduced-motion`.
